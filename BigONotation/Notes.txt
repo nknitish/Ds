@@ -1,0 +1,5 @@
+Big O Notation is a way to measure best solution of a problem.
+
+Best solution  :
+1.Fast execution 
+2.Less Memory
