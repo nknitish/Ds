@@ -1,0 +1,7 @@
+
+Binary Search :
+- Binary Search is a much faster foam of Search.
+- Rather then eliminating one element at a time , you can eliminate half of the remaining element at a time. 
+- Binary Search only works on sorted Array.
+- Best Case O(1)
+- Worst Case - O(log n)

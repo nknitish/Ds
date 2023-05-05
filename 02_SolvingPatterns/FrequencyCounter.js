@@ -135,7 +135,7 @@ function sameFrequency(num1, num2) {
   }, {});
 
   for (const key in num1Frequency) {
-    if (!(key in num1Frequency)) {
+    if (!(key in num2Frequency)) {
       return false;
     }
 
