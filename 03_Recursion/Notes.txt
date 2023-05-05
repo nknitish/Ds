@@ -1,0 +1,15 @@
+//Recursion 
+A process (function) that calls itself;
+
+Why to use Recursion ? 
+
+- Use in JSON Stringify/Parse
+- document.getElement by Id 
+- Dom Traversal algorithm
+- Object Traversal
+- A cleaner alternative to iteration 
+
+Two essential point of Recursion :
+- Base Point ( Where Program Stops )
+- Different input to a function
+

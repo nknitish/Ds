@@ -1,0 +1,202 @@
+Big O Notation is a way to measure best solution of a problem.
+In other words to measure a performance of algorithms we use Big O Notation.
+
+Best solution  :
+1.Fast execution 
+2.Less Memory
+
+
+Big O shorthand 
+
+1.Arithmetic Operation are constant. 
+2.Variable  Assignment is constant.
+3.Accessing element in Array is constant. 
+
+// O(n+10) => O(n)
+// O(100 * n) => O(n)
+// O(25) => O(1)
+// O(n^2 + n^3) => O(n^3)
+// O(n + n + n + n) => O(n)
+
+----------
+Question 1:
+Determine the time complexity for the following function 
+
+function logUpTo(n) {
+    for (var i = 1; i <= n; i++) {
+        console.log(i);
+    }
+}
+
+=> O(n)
+
+-----------
+
+Question 2:
+Determine the time complexity for the following function 
+
+function logAtMost10(n) {
+    for (var i = 1; i <= Math.min(n, 10); i++) {
+        console.log(i);
+    }
+}
+
+=> O(1)
+
+-------------
+Question 3:
+
+Determine the time complexity for the following function
+
+function logAtLeast10(n) {
+    for (var i = 1; i <= Math.max(n, 10); i++) {
+        console.log(i);
+    }
+}
+
+=> O(n)
+
+--------------
+Question 4:
+Determine the time complexity for the following function
+
+function onlyElementsAtEvenIndex(array) {
+    var newArray = Array(Math.ceil(array.length / 2));
+    for (var i = 0; i < array.length; i++) {
+        if (i % 2 === 0) {
+            newArray[i / 2] = array[i];
+        }
+    }
+    return newArray;
+}
+=> O(n)
+
+----------------
+
+Question 5:
+Determine the time complexity for the following function
+
+function subtotals(array) {
+    var subtotalArray = Array(array.length);
+    for (var i = 0; i < array.length; i++) {
+        var subtotal = 0;
+        for (var j = 0; j <= i; j++) {
+            subtotal += array[j];
+        }
+        subtotalArray[i] = subtotal;
+    }
+    return subtotalArray;
+}
+
+
+=> O(n^2)
+
+=====================================================================
+Space complexity in Js
+
+1. Most primitives values are constant , ( boolean , string , undefined, null)
+2. String require O(n) space.
+3. Arrays and Object require O(n) space.
+
+=====================================================================
+
+Big O Space Complexity Quiz
+
+Question 1:
+Determine the space complexity for the following function  
+
+function logUpTo(n) {
+    for (var i = 1; i <= n; i++) {
+        console.log(i);
+    }
+}
+
+=>O(1)
+
+--------------
+
+Question 2:
+Determine the space complexity for the following function  
+
+function logAtMost10(n) {
+    for (var i = 1; i <= Math.min(n, 10); i++) {
+        console.log(i);
+    }
+}
+
+=>O(1)
+
+--------------
+Question 3:
+Determine the space complexity for the following function  
+
+function logAtMost10(n) {
+    for (var i = 1; i <= Math.min(n, 10); i++) {
+        console.log(i);
+    }
+}
+
+=> O(1)
+
+---------------
+
+Question 4:
+Determine the  space complexity for the following function 
+
+function onlyElementsAtEvenIndex(array) {
+    var newArray = Array(Math.ceil(array.length / 2));
+    for (var i = 0; i < array.length; i++) {
+        if (i % 2 === 0) {
+            newArray[i / 2] = array[i];
+        }
+    }
+    return newArray;
+}
+
+=> O(n)
+
+----------------
+
+Question 5:
+Determine the space complexity for the following function
+
+function subtotals(array) {
+    var subtotalArray = Array(array.length);
+    for (var i = 0; i < array.length; i++) {
+        var subtotal = 0;
+        for (var j = 0; j <= i; j++) {
+            subtotal += array[j];
+        }
+        subtotalArray[i] = subtotal;
+    }
+    return subtotalArray;
+}
+
+=> O(n)
+---------------
+=====================================================================
+Logarithms
+
+The Logarithms of a number roughly measure the number of times you can divide a number 
+by 2 before you get a value which is less then or equal to one. 
+
+=====================================================================
+
+How do you improve in DSA
+
+1. Devise a plan for solving a problem
+2. Master common problem solving pattern
+
+
+--------------
+How to solve a problem 
+1. Understand a problem
+2. Explore examples
+3. Break it down
+4. Solve / Simplify
+5. Look back and refactor
+
+
+
+
+

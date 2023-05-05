@@ -1,0 +1,42 @@
+How do you improve in DSA
+
+1. Devise a plan for solving a problem
+2. Master common problem solving pattern
+
+
+-----------------------------------------------
+Master common problem solving pattern
+
+1. Frequency Counter
+2. Multiple Pointers
+3. Sliding window
+4. Divide and Conquer
+5. Dynamic Programming 
+6. Greedy Algorithms
+7. Backtracking 
+
+-----------------------------------------------
+
+1. Frequency Counter =>
+Frequency Conquer uses objects/sets to collect values/Frequency of values.
+This can avoid the need for nested loop or O(n^2) with string or arrays. 
+
+2. MULTIPLE POINTERS =>
+Creating pointers or values that correspond to an index or position and move towards the beginning, end or middle based on a certain condition
+Very efficient for solving problems with minimal space complexity as well
+
+3. Sliding window =>
+This pattern involve creating a window which can be either a array or number from one position to another position.
+Depending on condition, the window either closes or increase ( and a new  window is created )
+Very useful for track a subset of data in a array or string.
+
+4. Divide and Conquer => 
+This pattern involve dividing a dataset into smaller chunks and then repeating a process with subset of data.
+This pattern can tremendously decrease time complexity. 
+
+-----------------------------------------------
+
+
+
+
+
