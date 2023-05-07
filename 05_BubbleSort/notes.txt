@@ -1,0 +1,3 @@
+// Bubble Sort 
+- Bubble sort is simplest way to sort a array
+- O(n2)
