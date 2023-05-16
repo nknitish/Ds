@@ -1,0 +1,4 @@
+Merge Sort :
+- Merge Sort break Array into small pieces until smallest part have a length of 1. 
+- Then it merge breakdowns array and in this way it sort entire array. 
+- Best Case - O(n log n) 

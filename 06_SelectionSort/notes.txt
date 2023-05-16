@@ -1,0 +1,5 @@
+// Selection Sort
+
+- In Selection Sort, we take a smallest number in array and then swap it in array in  order. 
+- Better then bubbleSort , if you want to reduce number of swaps 
+- O(n2)

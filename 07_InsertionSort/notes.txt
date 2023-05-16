@@ -1,0 +1,3 @@
+// Insertion Sort
+
+- Builds up the sort by gradually a larger left half which is already sorted.
