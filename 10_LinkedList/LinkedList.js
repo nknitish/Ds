@@ -159,21 +159,13 @@ class LinkedList {
   reverse() {
     // //First Approch
     // let mid = parseInt(this.length / 2);
-
     // for (let i = 0; i < mid; i++) {
     //   let left = this.get(i);
     //   let right = this.get(this.length - i - 1);
-
     //   let temp = left.value;
     //   left.value = right.value;
     //   right.value = temp;
     // }
-
-    let tailCopy = this.tail;
-
-    while (this.head !== tailCopy) {}
-
-    return this;
   }
 }
 
@@ -185,8 +177,5 @@ list.push(3);
 list.push(4);
 list.push(5);
 
-list.reverse();
+// list.reverse();
 list.traverse();
-
-//
-console.log(list);
