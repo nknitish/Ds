@@ -1,0 +1,14 @@
+//Binary Heaps is similar to Binary Search Tree with some extra rules!
+
+MaxBinaryHeap : => In MaxBinaryHeap Parent Node are always larger then child nodes.
+MinBinaryHeap : => In MinBinaryHeap Parent Node are always smaller then child nodes.
+
+For any index of an array n;
+The left child is stored at 2n+1
+The right child is stored at 2n+2
+
+
+
+To Access any Parent index from child
+Parent Index= (childIndex-1) /2 (Floored)
+

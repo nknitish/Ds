@@ -1,0 +1,14 @@
+Tree Traversal refer to iterating to each element in a tree.
+
+There are 2 way to traverse tree
+    1. Breadth first search
+    2. Depth first search
+
+
+
+Depth Fist search 
+    1. DFS PreOrder
+    2. DFS PostOrder
+    3. DFS InOrder
+
+    
