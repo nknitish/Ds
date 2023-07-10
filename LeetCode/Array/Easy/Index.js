@@ -116,13 +116,13 @@
 //===============================================================================
 //1480. Running Sum of 1d Array
 
-function sum(arr, index) {
-  let sum = 0;
-  for (let i = 0; i <= index; i++) {
-    sum += arr[i];
-  }
-  return sum;
-}
+// function sum(arr, index) {
+//   let sum = 0;
+//   for (let i = 0; i <= index; i++) {
+//     sum += arr[i];
+//   }
+//   return sum;
+// }
 
 // var runningSum = function (nums) {
 //   return nums.map((_, i) => sum(nums, i));
@@ -150,22 +150,47 @@ function sum(arr, index) {
 //===============================================================================
 //1365. How Many Numbers Are Smaller Than the Current Number
 
-function countSmallerNumber(arr, num) {
-  let count = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < num) {
-      count++;
-    }
-  }
-  return count;
-}
-var smallerNumbersThanCurrent = function (nums) {
-  return nums.map((num) => countSmallerNumber(nums, num));
-};
+// function countSmallerNumber(arr, num) {
+//   let count = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] < num) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// var smallerNumbersThanCurrent = function (nums) {
+//   return nums.map((num) => countSmallerNumber(nums, num));
+// };
 
-console.log(smallerNumbersThanCurrent([7, 7, 7, 7]));
+// console.log(smallerNumbersThanCurrent([7, 7, 7, 7]));
 //===============================================================================
+
+//1389. Create Target Array in the Given Order
+
+// var createTargetArray = function (nums, index) {
+//   let arr = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     arr.splice(index[i], 0, nums[i]);
+//   }
+//   return arr;
+// };
+
+// console.log(createTargetArray([0, 1, 2, 3, 4], [0, 1, 2, 2, 1]));
 //===============================================================================
+
+//2652. Sum Multiples
+// var sumOfMultiples = function (n) {
+//   let sum = 0;
+//   for (let i = 1; i <= n; i++) {
+//     if (i % 3 === 0 || i % 5 === 0 || i % 7 === 0) {
+//       sum += i;
+//     }
+//   }
+//   return sum;
+// };
+// console.log(sumOfMultiples(10));
+
 //===============================================================================
 //===============================================================================
 //===============================================================================
