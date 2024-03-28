@@ -1,0 +1,25 @@
+//Difference between Array and LinkedList
+-- Array takes continuous place in memory but LinkedList does't 
+-- Array Store data based on index while LinkedList store data and also point to next Element 
+-- LinkedList have, Head, Tail and length property while Array only have length and we access value based on index. 
+
+
+Big O in LinkedList
+
+- Push O(1)
+- Pop O(n)
+- Shift O(1)
+- Unshift O(1)
+- Get O(n)
+- Set O(n)
+- Insert O(n)
+- Remove O(n) 
+- Reverse O(n)
+
+-- How LinkedList is better then Array 
+- Shift
+- Unshift
+
+-- How Array is better then LinkedList
+- Pop
+- Access Values by index

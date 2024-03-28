@@ -1,4 +1,5 @@
-// Node
+//===============================================================================
+// LinkedList
 
 class Node {
   constructor(value) {
@@ -14,45 +15,42 @@ class LinkedList {
     this.length = 0;
   }
 
-  //Push
+  //push
   push(value) {
     let newNode = new Node(value);
 
-    if (this.head) {
-      this.tail.next = newNode;
-      this.tail = newNode;
-    } else {
+    //If linked list is empty
+    if (!this.head) {
       this.head = newNode;
-      this.tail = this.head;
+    } else {
+      this.tail.next = newNode;
     }
-    this.length++;
 
+    this.tail = newNode;
+    this.length += 1;
     return this;
   }
 
-  //POP
+  //Pop
   pop() {
-    //If No Length
-    if (!this.length) return undefined;
-
-    // If there is only One Node
-    if (this.length === 1) {
-      let temp = this.head;
-      this.head = null;
-      this.tail = this.head;
-      this.length--;
-      return temp;
-    }
+    // if linkedlist is empty
+    if (!this.head) return;
 
     let temp = this.head;
-    let previous;
-
+    let prev = null;
     while (temp.next) {
-      previous = temp;
+      prev = temp;
       temp = temp.next;
     }
-    this.tail = previous;
-    this.tail.next = null;
+
+    //pointing tail to last node
+    this.tail = prev;
+
+    if (this.length === 1) {
+      this.head = null;
+    } else {
+      this.tail.next = null;
+    }
     this.length--;
     return temp;
   }
@@ -66,58 +64,64 @@ class LinkedList {
     }
   }
 
-  //shift()
-
   shift() {
-    if (!this.head) return undefined;
+    // if linkedlist is empty
+    if (!this.head) return;
 
+    //Get currentNode
     let currentNode = this.head;
 
-    if (this.length === 1) {
-      this.head = null;
-      this.tail = null;
-    } else {
-      this.head = this.head.next;
-    }
+    //point head to next node of list
+    this.head = this.head.next;
+    this.length -= 1;
 
-    this.length--;
+    //If there is no node in list
+    if (!this.length) this.tail = null;
+
+    //clear next value from current node
+    currentNode.next = null;
     return currentNode;
   }
 
-  // unshift()
-
+  // adding element in the begining of list
   unshift(value) {
+    //creating new node
     let newNode = new Node(value);
+    newNode.next = this.head;
 
-    if (!this.head) {
-      this.head = newNode;
-      this.tail = this.head;
-    } else {
-      newNode.next = this.head;
-      this.head = newNode;
-    }
+    //pointing head to new Node
+    this.head = newNode;
+    this.length += 1;
 
-    this.length++;
+    //If length is now 1 then assing same value to tail
+    if (this.length == 1) this.tail = newNode;
+
     return this;
   }
 
+  //get by index
   get(index) {
-    if (index < 0 || index >= this.length || index === undefined) {
-      return null;
-    }
+    //handle edge cases
+    if (index < 0 || index >= this.length || index === undefined) return;
 
     let currentNode = this.head;
+
+    //running loop till index
     for (let i = 0; i < index; i++) {
       currentNode = currentNode.next;
     }
+
     return currentNode;
   }
 
+  //set by index // replace value
   set(index, value) {
-    let foundNode = this.get(index);
+    //find the record
+    let foundRecord = this.get(index);
 
-    if (foundNode) {
-      foundNode.value = value;
+    //if there is record on index then update it with value
+    if (foundRecord) {
+      foundRecord.value = value;
       return true;
     }
 
@@ -125,57 +129,83 @@ class LinkedList {
   }
 
   insert(index, value) {
-    if (index < 0 || index > this.length) return null;
+    if (index < 0 || index >= this.length || index === undefined) return;
     if (index === 0) return this.unshift(value);
-    if (index === this.length) return this.push(value);
+    if (index === this.length - 1) return this.push(value);
 
+    // new node
     let newNode = new Node(value);
+    let prevNode = this.get(index - 1);
 
-    let previousNode = this.get(index - 1);
-    let nextNode = previousNode.next;
+    newNode.next = prevNode.next;
+    prevNode.next = newNode;
 
-    previousNode.next = newNode;
-    newNode.next = nextNode;
     this.length++;
 
     return this;
   }
-
   remove(index) {
-    if (index < 0 || index >= this.length) return null;
+    if (index < 0 || index >= this.length || index === undefined) return;
     if (index === 0) return this.shift();
     if (index === this.length - 1) return this.pop();
 
-    let previousNode = this.get(index - 1);
-    let removedNode = previousNode.next;
+    let prevNode = this.get(index - 1);
+    let currentNode = prevNode.next;
 
-    previousNode.next = removedNode.next;
-    removedNode.next = null;
+    //Assing previous node with next node;
+    prevNode.next = currentNode.next;
+
+    //Clearing node's next element
+    currentNode.next = null;
 
     this.length--;
-    return removedNode;
+    return currentNode;
   }
-
+  //Reverse means reverse the node, which means a->b->c then a<-b<-c. Value remain same, pointer change.
   reverse() {
-    // //First Approch
-    // let mid = parseInt(this.length / 2);
-    // for (let i = 0; i < mid; i++) {
-    //   let left = this.get(i);
-    //   let right = this.get(this.length - i - 1);
-    //   let temp = left.value;
-    //   left.value = right.value;
-    //   right.value = temp;
-    // }
+    let current = this.head;
+    let prev = null;
+
+    while (current) {
+      //geting next value
+      let next = current.next;
+      //Changing the pointer of current node to previous node
+      current.next = prev;
+      //Storing prevous node
+      prev = current;
+      //pointing current to next node
+      current = next;
+    }
+
+    return prev;
   }
 }
 
 const list = new LinkedList();
-list.push(0);
-list.push(1);
-list.push(2);
-list.push(3);
-list.push(4);
-list.push(5);
+list.push(10);
+list.push(11);
+list.push(12);
+list.push(13);
+list.push(14);
+// console.log(list.pop());
+// console.log(list.pop());
+// console.log(list.pop());
+// console.log(list.pop());
+// console.log(list.pop());
 
-// list.reverse();
-list.traverse();
+// console.log(list.shift());
+// console.log(list.shift());
+// console.log(list.shift());
+// console.log(list.shift());
+// console.log(list.unshift(5));
+// console.log(list.unshift(4));
+// console.log(list.unshift(3));
+
+// console.log(list.set(1, "Four"));
+// console.log(list.insert(2, "One"));
+// console.log(list.insert(2, "One"));
+
+// console.log(list.reverse());
+
+// console.log(list);
+//===============================================================================

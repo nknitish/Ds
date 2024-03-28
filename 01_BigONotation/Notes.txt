@@ -12,13 +12,29 @@ Big O shorthand
 2.Variable  Assignment is constant.
 3.Accessing element in Array is constant. 
 
+Big O is associated with Divide and Conquer -> O(log n)
+
+Shorting based on order 
+---
+O(n)
+O(log n)
+O(n)
+
+-----
 // O(n+10) => O(n)
+// O(n^2 +n) => O(n^2)
 // O(100 * n) => O(n)
 // O(25) => O(1)
 // O(n^2 + n^3) => O(n^3)
 // O(n + n + n + n) => O(n)
+// fn(a,b) => O(a+b)
+
 
 ----------
+Learn Big O-  https://www.bigocheatsheet.com/
+----------
+
+
 Question 1:
 Determine the time complexity for the following function 
 
